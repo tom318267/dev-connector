@@ -7,6 +7,7 @@ import ProfilePage from "./components/ProfilePage/ProfilePage";
 import RegisterPage from "./components/RegisterPage/RegisterPage";
 import LoginPage from "./components/LoginPage/LoginPage";
 import Navbar from "./components/Navbar/Navbar";
+import Alert from "./components/layout/alert";
 
 // Redux
 import { Provider } from "react-redux";
@@ -18,6 +19,7 @@ function App() {
       <Provider store={store}>
         <Router>
           <Navbar />
+          <Alert />
           <Switch>
             <Route exact path="/" component={Homepage} />
             <Route path="/developers" component={DevelopersPage} />

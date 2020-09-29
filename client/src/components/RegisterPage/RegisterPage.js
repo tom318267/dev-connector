@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { connect } from "react-redux";
+import { setAlert } from "../../actions/alert";
 import { Link } from "react-router-dom";
 import {
   RegisterContainer,
@@ -6,7 +8,7 @@ import {
   RegisterForm,
 } from "./RegisterPage.styles";
 
-const RegisterPage = () => {
+const RegisterPage = ({ setAlert }) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -27,7 +29,7 @@ const RegisterPage = () => {
     e.preventDefault();
 
     if (password !== confirmPassword) {
-      console.log("Passwords do not match");
+      setAlert("Passwords do not match", "danger");
     } else {
       console.log("Success");
       // const newUser = {
@@ -111,4 +113,4 @@ const RegisterPage = () => {
   );
 };
 
-export default RegisterPage;
+export default connect(null, { setAlert })(RegisterPage);
