@@ -10,6 +10,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Dashboard from "./components/Dashboard/Dashboard";
 import Alert from "./components/layout/alert";
 import CreateProfile from "./components/profile-form/CreateProfile";
+import EditProfile from "./components/profile-form/EditProfile";
 import { loadUser } from "./actions/auth";
 import setAuthToken from "./utils/setAuthToken";
 import PrivateRoute from "./components/routing/PrivateRoute";
@@ -39,7 +40,12 @@ function App() {
             <Route exact path="/profile" component={ProfilePage} />
             <Route exact path="/register" component={RegisterPage} />
             <Route exact path="/login" component={LoginPage} />
-            <Route exact path="/create-profile" component={CreateProfile} />
+            <PrivateRoute
+              exact
+              path="/create-profile"
+              component={CreateProfile}
+            />
+            <PrivateRoute exact path="/edit-profile" component={EditProfile} />
             <PrivateRoute exact path="/dashboard" component={Dashboard} />
           </Switch>
         </Router>

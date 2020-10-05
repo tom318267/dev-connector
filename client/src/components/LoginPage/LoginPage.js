@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { Link, Redirect } from "react-router-dom";
 import { LoginContainer, LoginForm, LoginButton } from "./LoginPage.styles";
 import { login } from "../../actions/auth";
+import Swal from "sweetalert2";
 
 const LoginPage = ({ login, isAuthenticated }) => {
   const [formData, setFormData] = useState({
@@ -19,6 +20,18 @@ const LoginPage = ({ login, isAuthenticated }) => {
     });
   };
 
+  var Toast = Swal.mixin({
+    toast: true,
+    position: "top-end",
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.addEventListener("mouseenter", Swal.stopTimer);
+      toast.addEventListener("mouseleave", Swal.resumeTimer);
+    },
+  });
+
   const onSubmit = async (e) => {
     e.preventDefault();
 
@@ -26,6 +39,10 @@ const LoginPage = ({ login, isAuthenticated }) => {
   };
 
   if (isAuthenticated) {
+    Toast.fire({
+      icon: "success",
+      title: "Successfully logged in",
+    });
     return <Redirect to="/dashboard" />;
   }
 

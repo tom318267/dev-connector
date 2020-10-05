@@ -27,18 +27,36 @@ const RegisterPage = ({ setAlert, register, history, isAuthenticated }) => {
     });
   };
 
+  var Toast = Swal.mixin({
+    toast: true,
+    position: "top-end",
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.addEventListener("mouseenter", Swal.stopTimer);
+      toast.addEventListener("mouseleave", Swal.resumeTimer);
+    },
+  });
+
   const onSubmit = async (e) => {
     e.preventDefault();
 
     if (password !== confirmPassword) {
-      Swal.fire("Oops...", "Passwords do not match", "error");
+      Toast.fire({
+        icon: "error",
+        title: "Wrong Credentials",
+      });
     } else {
       register({ name, email, password });
     }
   };
 
   if (isAuthenticated) {
-    Swal.fire("Success", "You have successfully registered", "success");
+    Toast.fire({
+      icon: "success",
+      title: "Successfully registered",
+    });
     return <Redirect to="/" />;
   }
 

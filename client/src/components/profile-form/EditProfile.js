@@ -1,17 +1,22 @@
-import React, { useState, Fragment } from "react";
+import React, { useState, Fragment, useEffect } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import { createProfile } from "../../actions/profile";
+import { createProfile, getCurrentProfile } from "../../actions/profile";
 import {
-  CreateProfileContainer,
-  CreateProfileHeader,
-  CreateProfileForm,
-  CreateProfileSocialDiv,
-  OptionalDiv,
-  SubmitDiv,
-} from "./CreateProfile.styles";
+  EditProfileContainer,
+  EditProfileHeader,
+  EditProfileForm,
+  EditProfileSocialDiv,
+  EditOptionalDiv,
+  EditSubmitDiv,
+} from "./EditProfile.styles";
 
-const CreateProfile = ({ createProfile, history }) => {
+const EditProfile = ({
+  profile: { profile, loading },
+  createProfile,
+  getCurrentProfile,
+  history,
+}) => {
   const [formData, setFormData] = useState({
     company: "",
     website: "",
@@ -44,24 +49,43 @@ const CreateProfile = ({ createProfile, history }) => {
     instagram,
   } = formData;
 
+  useEffect(() => {
+    getCurrentProfile();
+    setFormData({
+      company: loading || !profile.company ? "" : profile.company,
+      website: loading || !profile.website ? "" : profile.website,
+      location: loading || !profile.location ? "" : profile.location,
+      status: loading || !profile.status ? "" : profile.status,
+      skills: loading || !profile.skills ? "" : profile.skills.join(","),
+      githubusername:
+        loading || !profile.githubusername ? "" : profile.githubusername,
+      bio: loading || !profile.bio ? "" : profile.bio,
+      twitter: loading || !profile.twitter ? "" : profile.twitter,
+      facebook: loading || !profile.facebook ? "" : profile.facebook,
+      linkedin: loading || !profile.linkedin ? "" : profile.linkedin,
+      youtube: loading || !profile.youtube ? "" : profile.youtube,
+      instagram: loading || !profile.instagram ? "" : profile.instagram,
+    });
+  }, [loading]);
+
   const onChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
   const onSubmit = (e) => {
     e.preventDefault();
-    createProfile(formData, history);
+    createProfile(formData, history, true);
   };
 
   return (
-    <CreateProfileContainer>
-      <CreateProfileForm onSubmit={(e) => onSubmit(e)}>
-        <CreateProfileHeader>
-          <h1>Create Your Profile</h1>
+    <EditProfileContainer>
+      <EditProfileForm onSubmit={(e) => onSubmit(e)}>
+        <EditProfileHeader>
+          <h1>Edit Your Profile</h1>
           <h3>
             <i className="fas fa-user"></i> Let's get some information to make
             your profile stand out
           </h3>
-        </CreateProfileHeader>
+        </EditProfileHeader>
         <small>* = required field</small>
         <select
           name="status"
@@ -138,7 +162,7 @@ const CreateProfile = ({ createProfile, history }) => {
         ></textarea>
         <small>Tell us a little bit about yourself</small>
 
-        <OptionalDiv>
+        <EditOptionalDiv>
           <button
             type="button"
             onClick={() => toggleSocialInputs(!displaySocialInputs)}
@@ -146,11 +170,11 @@ const CreateProfile = ({ createProfile, history }) => {
             Add Social Network Links
           </button>
           <small>Optional</small>
-        </OptionalDiv>
+        </EditOptionalDiv>
 
         {displaySocialInputs && (
           <Fragment>
-            <CreateProfileSocialDiv>
+            <EditProfileSocialDiv>
               <div className="input-container">
                 <i className="fab fa-twitter"></i>
                 <input
@@ -210,17 +234,23 @@ const CreateProfile = ({ createProfile, history }) => {
                   onChange={(e) => onChange(e)}
                 />
               </div>
-            </CreateProfileSocialDiv>
+            </EditProfileSocialDiv>
           </Fragment>
         )}
 
-        <SubmitDiv>
+        <EditSubmitDiv>
           <button id="submit-button">Submit</button>
           <button id="go-back">Go Back</button>
-        </SubmitDiv>
-      </CreateProfileForm>
-    </CreateProfileContainer>
+        </EditSubmitDiv>
+      </EditProfileForm>
+    </EditProfileContainer>
   );
 };
 
-export default connect(null, { createProfile })(CreateProfile);
+const mapStateToProps = (state) => ({
+  profile: state.profile,
+});
+
+export default connect(mapStateToProps, { createProfile, getCurrentProfile })(
+  EditProfile
+);
