@@ -1,5 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import { Link, Redirect } from "react-router-dom";
 import {
   HomepageContainer,
   OverlayContainer,
@@ -8,7 +9,10 @@ import {
   SignUpButton,
 } from "./Homepage.styles";
 
-const Homepage = () => {
+const Homepage = ({ isAuthenticated }) => {
+  if (isAuthenticated) {
+    return <Redirect to="/dashboard" />;
+  }
   return (
     <HomepageContainer>
       <OverlayContainer>
@@ -32,4 +36,8 @@ const Homepage = () => {
   );
 };
 
-export default Homepage;
+const mapStateToProps = (state) => ({
+  isAuthenticated: state.auth.isAuthenticated,
+});
+
+export default connect(mapStateToProps)(Homepage);

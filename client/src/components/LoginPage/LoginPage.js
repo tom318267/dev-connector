@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import { Link, Redirect } from "react-router-dom";
 import { LoginContainer, LoginForm, LoginButton } from "./LoginPage.styles";
+import { login } from "../../actions/auth";
 
-const LoginPage = () => {
+const LoginPage = ({ login, isAuthenticated }) => {
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -20,13 +22,13 @@ const LoginPage = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
 
-    console.log("Success");
-
-    setFormData({
-      email: "",
-      password: "",
-    });
+    login(email, password);
   };
+
+  if (isAuthenticated) {
+    return <Redirect to="/dashboard" />;
+  }
+
   return (
     <LoginContainer>
       <LoginForm onSubmit={(e) => onSubmit(e)}>
@@ -61,4 +63,8 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+const mapStateToProps = (state) => ({
+  isAuthenticated: state.auth.isAuthenticated,
+});
+
+export default connect(mapStateToProps, { login })(LoginPage);

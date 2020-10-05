@@ -66,3 +66,7 @@ export const DivItems = styled.div`
     }
   }
 `;
+
+export const LogOut = styled.a`
+  cursor: pointer;
+`;

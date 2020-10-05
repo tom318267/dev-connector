@@ -1,14 +1,16 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import { setAlert } from "../../actions/alert";
-import { Link } from "react-router-dom";
+import { register } from "../../actions/auth";
+import { Link, Redirect } from "react-router-dom";
+import Swal from "sweetalert2";
 import {
   RegisterContainer,
   RegisterButton,
   RegisterForm,
 } from "./RegisterPage.styles";
 
-const RegisterPage = ({ setAlert }) => {
+const RegisterPage = ({ setAlert, register, history, isAuthenticated }) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -29,36 +31,17 @@ const RegisterPage = ({ setAlert }) => {
     e.preventDefault();
 
     if (password !== confirmPassword) {
-      setAlert("Passwords do not match", "danger");
+      Swal.fire("Oops...", "Passwords do not match", "error");
     } else {
-      console.log("Success");
-      // const newUser = {
-      //   name,
-      //   email,
-      //   password,
-      //   confirmPassword,
-      // };
-      // try {
-      //   const config = {
-      //     headers: {
-      //       "Content-Type": "application/json",
-      //     },
-      //   };
-      //   const body = JSON.stringify(newUser);
-      //   const res = await axios.post("/api/users", body, config);
-      //   console.log(res.data);
-      // } catch (err) {
-      //   console.error(err.response.data);
-      // }
+      register({ name, email, password });
     }
-
-    setFormData({
-      name: "",
-      email: "",
-      password: "",
-      confirmPassword: "",
-    });
   };
+
+  if (isAuthenticated) {
+    Swal.fire("Success", "You have successfully registered", "success");
+    return <Redirect to="/" />;
+  }
+
   return (
     <RegisterContainer>
       <RegisterForm onSubmit={(e) => onSubmit(e)}>
@@ -113,4 +96,8 @@ const RegisterPage = ({ setAlert }) => {
   );
 };
 
-export default connect(null, { setAlert })(RegisterPage);
+const mapStateToProps = (state) => ({
+  isAuthenticated: state.auth.isAuthenticated,
+});
+
+export default connect(mapStateToProps, { setAlert, register })(RegisterPage);

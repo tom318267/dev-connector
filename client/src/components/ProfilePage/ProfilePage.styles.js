@@ -12,6 +12,7 @@ export const BackButtonContainer = styled.div`
     border-radius: 50px;
     cursor: pointer;
     font-size: 1rem;
+    box-shadow: 2px 2px 5px 0px rgba(50, 50, 50, 0.25);
 
     &:focus {
       outline: none;

@@ -72,6 +72,7 @@ export const ProfileButton = styled.button`
   color: black;
   cursor: pointer;
   border-radius: 50px;
+  box-shadow: 2px 2px 5px 0px rgba(50, 50, 50, 0.35);
 
   &:focus {
     outline: none;
