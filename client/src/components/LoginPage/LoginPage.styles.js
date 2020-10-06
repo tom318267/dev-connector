@@ -31,7 +31,7 @@ export const LoginForm = styled.form`
 `;
 
 export const LoginButton = styled.button`
-  padding: 15px;
+  padding: 12px;
   border-radius: 50px;
   background-color: #14a693;
   border: none;

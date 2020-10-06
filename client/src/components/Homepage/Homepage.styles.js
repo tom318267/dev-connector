@@ -46,11 +46,12 @@ export const HeaderContainer = styled.div`
 export const ButtonGroup = styled.div`
   padding-top: 15px;
   button {
-    padding: 10px;
+    padding: 12px;
     font-size: 1.2rem;
     margin: 5px;
     border: none;
     cursor: pointer;
+    border-radius: 50px;
 
     &:focus {
       outline: none;

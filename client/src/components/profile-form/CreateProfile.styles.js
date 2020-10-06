@@ -29,6 +29,7 @@ export const CreateProfileForm = styled.form`
 
   small {
     margin-bottom: 15px;
+    font-size: 1rem;
   }
 
   small:last-of-type {

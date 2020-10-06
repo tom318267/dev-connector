@@ -66,7 +66,7 @@ export const ProfileInfo = styled.div`
 export const ProfileButton = styled.button`
   margin-top: 10px;
   font-size: 1rem;
-  padding: 10px;
+  padding: 12px;
   background-color: white;
   border: none;
   color: black;

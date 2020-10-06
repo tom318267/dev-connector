@@ -216,7 +216,9 @@ const CreateProfile = ({ createProfile, history }) => {
 
         <SubmitDiv>
           <button id="submit-button">Submit</button>
-          <button id="go-back">Go Back</button>
+          <Link to="/dashboard">
+            <button id="go-back">Go Back</button>
+          </Link>
         </SubmitDiv>
       </CreateProfileForm>
     </CreateProfileContainer>
