@@ -10,7 +10,7 @@ import {
   ExperienceSubmitGroup,
 } from "../../components/profile-form/AddExperience.styles";
 
-const AddExperience = () => {
+const AddExperience = ({ addExperience, history }) => {
   const [formData, setFormData] = useState({
     company: "",
     title: "",
@@ -30,7 +30,12 @@ const AddExperience = () => {
 
   return (
     <ExperienceContainer>
-      <ExperienceForm>
+      <ExperienceForm
+        onSubmit={(e) => {
+          e.preventDefault();
+          addExperience(formData, history);
+        }}
+      >
         <ExperienceHeader>
           <h1>Add An Experience</h1>
           <h3>
@@ -66,7 +71,7 @@ const AddExperience = () => {
         <label>From Date</label>
         <input
           className="input-element"
-          type="text"
+          type="date"
           name="from"
           placeholder="mm/dd/yyyy"
           value={from}
@@ -88,7 +93,7 @@ const AddExperience = () => {
         <label>To Date</label>
         <input
           className="input-element"
-          type="text"
+          type="date"
           name="to"
           placeholder="mm/dd/yyyy"
           value={to}

@@ -12,6 +12,7 @@ import Alert from "./components/layout/alert";
 import CreateProfile from "./components/profile-form/CreateProfile";
 import EditProfile from "./components/profile-form/EditProfile";
 import AddExperience from "./components/profile-form/AddExperience";
+import AddEducation from "./components/profile-form/AddEducation";
 import { loadUser } from "./actions/auth";
 import setAuthToken from "./utils/setAuthToken";
 import PrivateRoute from "./components/routing/PrivateRoute";
@@ -52,6 +53,11 @@ function App() {
               exact
               path="/add-experience"
               component={AddExperience}
+            />
+            <PrivateRoute
+              exact
+              path="/add-education"
+              component={AddEducation}
             />
           </Switch>
         </Router>

@@ -5,12 +5,16 @@ import { getCurrentProfile } from "../../actions/profile";
 import Spinner from "../layout/Spinner";
 import { CreateProfileButton } from "./Dashboard.styles";
 import DashboardActions from "./DashboardActions";
-import { DashboardContainer } from "./Dashboard.styles";
+import { DashboardContainer, DeleteAccountButton } from "./Dashboard.styles";
+import Experience from "../Dashboard/Experience";
+import Education from "../Dashboard/Education";
+import { deleteAccount } from "../../actions/profile";
 
 const Dashboard = ({
   auth: { user },
   profile: { profile, loading },
   getCurrentProfile,
+  deleteAccount,
 }) => {
   useEffect(() => {
     getCurrentProfile();
@@ -28,6 +32,11 @@ const Dashboard = ({
       {profile !== null ? (
         <Fragment>
           <DashboardActions />
+          <Experience experience={profile.experience} />
+          <Education education={profile.education} />
+          <DeleteAccountButton onClick={() => deleteAccount()}>
+            <i className="fas fa-user-minus"></i> Delete My Account
+          </DeleteAccountButton>
         </Fragment>
       ) : (
         <Fragment>
@@ -46,4 +55,6 @@ const mapStateToProps = (state) => ({
   profile: state.profile,
 });
 
-export default connect(mapStateToProps, { getCurrentProfile })(Dashboard);
+export default connect(mapStateToProps, { getCurrentProfile, deleteAccount })(
+  Dashboard
+);
