@@ -56,6 +56,7 @@ const AddEducation = ({ addEducation, history }) => {
           placeholder="* School or Bootcamp"
           value={school}
           onChange={(e) => onChange(e)}
+          required
         />
         <input
           className="input-element"
@@ -64,6 +65,7 @@ const AddEducation = ({ addEducation, history }) => {
           placeholder="* Degree or Certificate"
           value={degree}
           onChange={(e) => onChange(e)}
+          required
         />
         <input
           className="input-element"

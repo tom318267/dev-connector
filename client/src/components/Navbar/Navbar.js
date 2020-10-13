@@ -7,6 +7,9 @@ import { NavbarContainer, NavbarDiv, DivItems, LogOut } from "./Navbar.styles";
 const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   const authLinks = (
     <DivItems>
+      <Link to="/profiles">
+        <h4>Developers</h4>
+      </Link>
       <Link to="/dashboard">
         <h4>
           <i className="fas fa-user"></i> Dashboard
@@ -22,7 +25,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
 
   const guestLinks = (
     <DivItems>
-      <Link to="/developers">
+      <Link to="/profiles">
         <h4>Developers</h4>
       </Link>
       <Link to="/register">

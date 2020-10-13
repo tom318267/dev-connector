@@ -1,0 +1,45 @@
+import React, { Fragment, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import Spinner from "../layout/Spinner";
+import { getProfileById } from "../../actions/profile";
+import { EditProfileButton, BackToProfilesButton } from "./Profile.styles";
+
+const Profile = ({
+  getProfileById,
+  profile: { profile, loading },
+  auth,
+  match,
+}) => {
+  useEffect(() => {
+    getProfileById(match.params.id);
+  }, [getProfileById]);
+
+  return (
+    <div>
+      {profile === null || loading ? (
+        <Spinner />
+      ) : (
+        <Fragment>
+          <Link to="/profiles">
+            <BackToProfilesButton>Back to Profiles</BackToProfilesButton>
+          </Link>
+          {auth.isAuthenticated &&
+            auth.loading === false &&
+            auth.user._id === profile.user._id && (
+              <Link to="/edit-profile">
+                <EditProfileButton>Edit Profile</EditProfileButton>
+              </Link>
+            )}
+        </Fragment>
+      )}
+    </div>
+  );
+};
+
+const mapStateToProps = (state) => ({
+  profile: state.profile,
+  auth: state.auth,
+});
+
+export default connect(mapStateToProps, { getProfileById })(Profile);

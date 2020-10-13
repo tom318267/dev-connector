@@ -48,17 +48,19 @@ const AddExperience = ({ addExperience, history }) => {
           className="input-element"
           type="text"
           name="title"
-          placeholder="Job Title"
+          placeholder="* Job Title"
           value={title}
           onChange={(e) => onChange(e)}
+          required
         />
         <input
           className="input-element"
           type="text"
           name="company"
-          placeholder="Company"
+          placeholder="* Company"
           value={company}
           onChange={(e) => onChange(e)}
+          required
         />
         <input
           className="input-element"

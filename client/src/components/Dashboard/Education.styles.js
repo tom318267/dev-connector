@@ -27,7 +27,7 @@ export const EducationTable = styled.table`
 `;
 
 export const EducationDeleteButton = styled.button`
-  background-color: #14a693;
+  background-color: #cc3300;
   border: none;
   padding: 10px;
   color: white;

@@ -27,7 +27,7 @@ export const ExperienceTable = styled.table`
 `;
 
 export const ExperienceDeleteButton = styled.button`
-  background-color: #14a693;
+  background-color: #cc3300;
   border: none;
   padding: 10px;
   color: white;

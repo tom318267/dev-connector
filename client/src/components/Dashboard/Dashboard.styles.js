@@ -13,7 +13,7 @@ export const DeleteAccountButton = styled.button`
   margin-top: 50px;
   font-size: 1rem;
   padding: 12px;
-  background-color: #14a693;
+  background-color: #cc3300;
   border: none;
   color: white;
   cursor: pointer;
