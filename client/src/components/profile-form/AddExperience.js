@@ -110,7 +110,7 @@ const AddExperience = ({ addExperience, history }) => {
           onChange={(e) => onChange(e)}
         ></textarea>
         <ExperienceSubmitGroup>
-          <button>Submit</button>
+          <button id="exp-submit-button">Submit</button>
           <Link to="/dashboard">
             <button id="go-back">Go Back</button>
           </Link>

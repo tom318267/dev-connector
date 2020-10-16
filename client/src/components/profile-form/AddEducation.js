@@ -115,7 +115,7 @@ const AddEducation = ({ addEducation, history }) => {
           onChange={(e) => onChange(e)}
         ></textarea>
         <EducationSubmitGroup>
-          <button>Submit</button>
+          <button id="edu-submit-button">Submit</button>
           <Link to="/dashboard">
             <button id="go-back">Go Back</button>
           </Link>

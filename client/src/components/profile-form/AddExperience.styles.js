@@ -62,6 +62,10 @@ export const ExperienceSubmitGroup = styled.div`
     margin-right: 5px;
   }
 
+  #exp-submit-button {
+    margin-right: 10px;
+  }
+
   #go-back {
     background-color: #eaeaea;
     color: black;

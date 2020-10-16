@@ -62,6 +62,10 @@ export const EducationSubmitGroup = styled.div`
     margin-right: 5px;
   }
 
+  #edu-submit-button {
+    margin-right: 10px;
+  }
+
   #go-back {
     background-color: #eaeaea;
     color: black;
