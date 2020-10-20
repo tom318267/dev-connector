@@ -184,6 +184,13 @@ export const GithubReposContainer = styled.div`
 
 export const RepoDiv = styled.div`
   margin: 10px;
+
+  h2 {
+    a {
+      text-decoration: none;
+      color: black;
+    }
+  }
 `;
 
 export const RepoButtons = styled.div`

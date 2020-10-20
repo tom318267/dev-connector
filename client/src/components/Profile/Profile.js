@@ -12,20 +12,11 @@ import {
   EditProfileButton,
   BackToProfilesButton,
   ProfileExperienceAndEducationContainer,
-  ProfileExperience,
   ProfileExperienceMap,
   ProfileEducationMap,
   BackButtonContainer,
-  ProfileEducation,
   NoExperienceContainer,
   NoEducationContainer,
-  GithubReposContainer,
-  GithubTitle,
-  RepoDiv,
-  RepoButtons,
-  StarsButton,
-  WatchersButton,
-  ForksButton,
 } from "./Profile.styles";
 
 const Profile = ({

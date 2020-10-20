@@ -17,7 +17,7 @@ const Homepage = ({ isAuthenticated }) => {
     <HomepageContainer>
       <OverlayContainer>
         <HeaderContainer>
-          <h1>Developer Connector</h1>
+          <h1>DevConnector</h1>
           <h3>
             Create a developer profile/portfolio, share posts and get help from
             other developers
