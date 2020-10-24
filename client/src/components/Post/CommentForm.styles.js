@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const PostFormContainer = styled.form`
+export const CommentFormContainer = styled.form`
   display: block;
   width: 80%;
   margin: 30px auto 50px auto;
@@ -16,7 +16,7 @@ export const PostFormContainer = styled.form`
   }
 `;
 
-export const PostSubmitButton = styled.button`
+export const CommentSubmitButton = styled.button`
   margin-top: 10px;
   padding: 12px;
   border-radius: 50px;

@@ -4,7 +4,7 @@ import Moment from "react-moment";
 import { connect } from "react-redux";
 import { addLike, removeLike, deletePost } from "../../actions/post";
 import {
-  PostItemsContainer,
+  PostItemContainer,
   PostImgContainer,
   PostInfoContainer,
   PostButtonContainer,
@@ -19,11 +19,14 @@ const PostItem = ({
   deletePost,
   auth,
   post: { _id, text, name, avatar, user, likes, comments, date },
+  showActions,
 }) => {
   return (
-    <PostItemsContainer>
+    <PostItemContainer>
       <PostImgContainer>
-        <img src={avatar} alt="profile-pic" />
+        <Link to={`/profile/${user}`}>
+          <img src={avatar} alt="profile-pic" />
+        </Link>
         <h2>{name}</h2>
       </PostImgContainer>
 
@@ -33,29 +36,36 @@ const PostItem = ({
           Posted on <Moment format="MM/DD/YYYY">{date}</Moment>
         </small>
 
-        <PostButtonContainer>
-          <LikeAndUnlikeButton onClick={(e) => addLike(_id)}>
-            <i className="fas fa-thumbs-up"></i>{" "}
-            {likes.length > 0 && <span>{likes.length}</span>}
-          </LikeAndUnlikeButton>
+        {showActions && (
+          <PostButtonContainer>
+            <LikeAndUnlikeButton onClick={(e) => addLike(_id)}>
+              <i className="fas fa-thumbs-up"></i>{" "}
+              {likes.length > 0 && <span>{likes.length}</span>}
+            </LikeAndUnlikeButton>
 
-          <LikeAndUnlikeButton onClick={(e) => removeLike(_id)}>
-            <i className="fas fa-thumbs-down"></i>
-          </LikeAndUnlikeButton>
+            <LikeAndUnlikeButton onClick={(e) => removeLike(_id)}>
+              <i className="fas fa-thumbs-down"></i>
+            </LikeAndUnlikeButton>
 
-          <DiscussionButton>
-            <Link to={`/post/${_id}`}>
-              Discussion {comments.length > 0 && <span>{comments.length}</span>}
-            </Link>
-          </DiscussionButton>
+            <DiscussionButton>
+              <Link to={`/posts/${_id}`}>
+                Discussion{" "}
+                {comments.length > 0 && <span>{comments.length}</span>}
+              </Link>
+            </DiscussionButton>
 
-          <DeletePostButton onClick={(e) => deletePost(_id)}>
-            <i className="fas fa-times" />
-          </DeletePostButton>
-        </PostButtonContainer>
+            <DeletePostButton onClick={(e) => deletePost(_id)}>
+              <i className="fas fa-times" />
+            </DeletePostButton>
+          </PostButtonContainer>
+        )}
       </PostInfoContainer>
-    </PostItemsContainer>
+    </PostItemContainer>
   );
+};
+
+PostItem.defaultProps = {
+  showActions: true,
 };
 
 const mapStateToProps = (state) => ({

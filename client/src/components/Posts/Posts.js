@@ -28,6 +28,7 @@ const Posts = ({ post: { posts, loading }, getPosts }) => {
       </PostHeaderContainer>
 
       <PostForm />
+      <hr style={{ width: "80%", margin: "0 auto 40px auto" }} />
 
       <PostFeed>Post Feed</PostFeed>
 

@@ -1,6 +1,6 @@
 import styled from "styled-components/macro";
 
-export const PostItemsContainer = styled.div`
+export const PostItemContainer = styled.div`
   display: grid;
   width: 80%;
   grid-template-columns: 1fr 4fr;

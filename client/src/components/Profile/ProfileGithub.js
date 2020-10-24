@@ -15,7 +15,7 @@ import {
 const ProfileGithub = ({ username, getGithubRepos, repos }) => {
   useEffect(() => {
     getGithubRepos(username);
-  }, [getGithubRepos]);
+  }, [getGithubRepos, username]);
   return (
     <div>
       <GithubTitle>Github Repos</GithubTitle>
