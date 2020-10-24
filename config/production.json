@@ -1,0 +1,7 @@
+{
+    "mongoURI": "mongodb+srv://tom123:tom123@dev-connector.fadkl.mongodb.net/<dbname>?retryWrites=true&w=majority",
+    "jwtSecret": "mysecrettoken",
+    "githubClientId": "d06b3fc2adcc5391acbf",
+    "githubSecret": "89bbe89e7bf8ce8b2cf76b4b1b80521d1383d885"
+  }
+  
