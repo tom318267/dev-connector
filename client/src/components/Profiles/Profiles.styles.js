@@ -31,6 +31,7 @@ export const Title = styled.h1`
   @media screen and (max-width: 425px) {
     font-size: 2rem;
     text-align: center;
+    letter-spacing: -2px;
   }
 `;
 

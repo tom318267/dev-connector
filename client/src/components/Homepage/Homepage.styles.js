@@ -30,6 +30,7 @@ export const HeaderContainer = styled.div`
     @media screen and (max-width: 425px) {
       font-size: 2rem;
       padding: 0 5px 12px 5px;
+      letter-spacing: -2px;
     }
   }
 

@@ -11,6 +11,10 @@ export const PostHeaderContainer = styled.div`
   h1 {
     color: #14a693;
     margin-bottom: 10px;
+
+    @media screen and (max-width: 425px) {
+      letter-spacing: -2px;
+    }
   }
 `;
 

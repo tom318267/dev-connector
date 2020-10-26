@@ -4,6 +4,12 @@ export const LoginContainer = styled.div`
   width: 60%;
   margin: 60px auto;
 
+  h1 {
+    @media screen and (max-width: 425px) {
+      letter-spacing: -2px;
+    }
+  }
+
   h1,
   h2 {
     margin-bottom: 10px;

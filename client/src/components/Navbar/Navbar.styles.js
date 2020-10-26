@@ -22,7 +22,7 @@ export const NavbarContainer = styled.div`
     color: white;
 
     @media screen and (max-width: 425px) {
-      font-size: 0.7rem;
+      font-size: 0.8rem;
     }
   }
 `;
@@ -37,15 +37,9 @@ export const DivItems = styled.div`
     color: white;
 
     @media screen and (max-width: 425px) {
-      font-size: 0.7rem;
+      font-size: 0.9rem;
     }
   }
-
-  // #login {
-  //   @media screen and (max-width: 425px) {
-  //     margin-right: unset;
-  //   }
-  // }
 `;
 
 export const LogOut = styled.a`
