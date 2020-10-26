@@ -9,6 +9,12 @@ export const NavbarContainer = styled.div`
 
   h2 {
     padding-left: 15px;
+
+    span {
+      @media screen and (max-width: 425px) {
+        display: none;
+      }
+    }
   }
 
   .logo {
@@ -16,7 +22,7 @@ export const NavbarContainer = styled.div`
     color: white;
 
     @media screen and (max-width: 425px) {
-      font-size: 0.6rem;
+      font-size: 0.7rem;
     }
   }
 `;

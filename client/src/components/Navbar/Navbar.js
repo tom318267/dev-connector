@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import { connect } from "react-redux";
 import { logout } from "../../actions/auth";
 import { Link } from "react-router-dom";
-import { NavbarContainer, NavbarDiv, DivItems, LogOut } from "./Navbar.styles";
+import { NavbarContainer, DivItems, LogOut } from "./Navbar.styles";
 
 const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   const authLinks = (
@@ -40,22 +40,10 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
     </DivItems>
   );
   return (
-    //   <NavbarContainer>
-    //     <NavbarDiv>
-    //       <Link to="/">
-    //         <h2>
-    //           <i className="fas fa-code"></i> DevConnecter
-    //         </h2>
-    //       </Link>
-    //       {!loading && (
-    //         <Fragment>{isAuthenticated ? authLinks : guestLinks}</Fragment>
-    //       )}
-    //     </NavbarDiv>
-    //   </NavbarContainer>
     <NavbarContainer>
       <Link to="/" className="logo">
         <h2>
-          <i className="fas fa-code"></i> DevConnect
+          <i className="fas fa-code"></i> <span>DevConnector</span>
         </h2>
       </Link>
       {!loading && (

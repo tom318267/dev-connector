@@ -16,5 +16,10 @@ export const DashButtonsActionsContainer = styled.div`
     i {
       color: #14a693;
     }
+
+    @media screen and (max-width: 425px) {
+      font-size: 0.4rem;
+      padding: 10px;
+    }
   }
 `;
