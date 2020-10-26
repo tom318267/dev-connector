@@ -37,7 +37,7 @@ export const DivItems = styled.div`
     color: white;
 
     @media screen and (max-width: 425px) {
-      font-size: 0.9rem;
+      font-size: 0.7rem;
     }
   }
 `;

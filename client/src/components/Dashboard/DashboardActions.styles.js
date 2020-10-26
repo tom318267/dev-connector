@@ -18,8 +18,9 @@ export const DashButtonsActionsContainer = styled.div`
     }
 
     @media screen and (max-width: 425px) {
-      font-size: 0.4rem;
+      font-size: 1rem;
       padding: 10px;
+      margin-bottom: 10px;
     }
   }
 `;

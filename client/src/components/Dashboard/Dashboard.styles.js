@@ -6,7 +6,7 @@ export const DashboardContainer = styled.div`
     margin-bottom: 10px;
 
     @media screen and (max-width: 425px) {
-      font-size: 1rem;
+      font-size: 1.5rem;
     }
   }
 
@@ -18,6 +18,12 @@ export const DashboardContainer = styled.div`
     font-size: 0.8rem;
     width: 90%;
     margin: 30px auto;
+  }
+
+  h3 {
+    @media screen and (max-width: 425px) {
+      font-size: 1.2rem;
+    }
   }
 `;
 
@@ -49,6 +55,6 @@ export const DeleteAccountButton = styled.button`
   box-shadow: 2px 2px 5px 0px rgba(50, 50, 50, 0.35);
 
   @media screen and (max-width: 425px) {
-    font-size: 0.5rem;
+    font-size: 0.8rem;
   }
 `;

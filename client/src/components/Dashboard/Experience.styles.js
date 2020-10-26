@@ -5,7 +5,7 @@ export const ExperienceTableDiv = styled.div`
     margin: 30px 0 10px 0;
 
     @media screen and (max-width: 425px) {
-      font-size: 1rem;
+      font-size: 1.2rem;
     }
   }
 `;
@@ -20,7 +20,7 @@ export const ExperienceTable = styled.table`
     padding: 8px;
 
     @media screen and (max-width: 425px) {
-      font-size: 0.5rem;
+      font-size: 0.8rem;
     }
   }
 
@@ -43,7 +43,7 @@ export const ExperienceDeleteButton = styled.button`
   cursor: pointer;
 
   @media screen and (max-width: 425px) {
-    font-size: 0.3rem;
+    font-size: 0.5rem;
     padding: 5px;
   }
 `;
