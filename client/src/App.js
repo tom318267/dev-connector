@@ -15,6 +15,7 @@ import Profiles from "./components/Profiles/Profiles";
 import Profile from "./components/Profile/Profile";
 import Posts from "./components/Posts/Posts";
 import Post from "./components/Post/Post";
+import NotFound from "./components/layout/NotFound";
 import { loadUser } from "./actions/auth";
 import setAuthToken from "./utils/setAuthToken";
 import PrivateRoute from "./components/routing/PrivateRoute";
@@ -69,6 +70,7 @@ const App = () => {
             />
             <PrivateRoute exact path="/posts" component={Posts} />
             <PrivateRoute exact path="/posts/:id" component={Post} />
+            <Route component={NotFound} />
           </Switch>
         </Router>
       </Provider>

@@ -4,7 +4,7 @@ export const NavbarContainer = styled.div`
   width: 100%;
   background-color: #14a693;
   height: 50px;
-  line-height: 50px;
+  line-height: 52px;
   overflow-x: hidden;
   box-shadow: 2px 2px 5px 0px rgba(50, 50, 50, 0.35);
 `;
@@ -39,7 +39,6 @@ export const NavbarDiv = styled.div`
 
 export const DivItems = styled.div`
   display: flex;
-  justify-content: flex-end;
   align-items: center;
 
   a {

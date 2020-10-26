@@ -67,3 +67,8 @@ export const SignUpButton = styled.button`
   background-color: #14a693;
   color: white;
 `;
+
+export const LoginButton = styled.button`
+  background-color: white;
+  color: black;
+`;
