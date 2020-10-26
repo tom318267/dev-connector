@@ -7,7 +7,7 @@ import {
   HeaderContainer,
   ButtonGroup,
   SignUpButton,
-  LoginButton,
+  LoginHomeButton,
 } from "./Homepage.styles";
 
 const Homepage = ({ isAuthenticated }) => {
@@ -28,7 +28,7 @@ const Homepage = ({ isAuthenticated }) => {
               <SignUpButton>Sign Up</SignUpButton>
             </Link>
             <Link to="/login">
-              <LoginButton>Login</LoginButton>
+              <LoginHomeButton>Login</LoginHomeButton>
             </Link>
           </ButtonGroup>
         </HeaderContainer>
