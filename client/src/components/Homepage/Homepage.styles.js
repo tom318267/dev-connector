@@ -28,7 +28,7 @@ export const HeaderContainer = styled.div`
     padding-bottom: 12px;
 
     @media screen and (max-width: 425px) {
-      font-size: 1.5rem;
+      font-size: 2rem;
       padding: 0 5px 12px 5px;
     }
   }
@@ -37,7 +37,7 @@ export const HeaderContainer = styled.div`
     font-size: 1.3rem;
 
     @media screen and (max-width: 425px) {
-      font-size: 0.7rem;
+      font-size: 1rem;
       padding: 0 10px;
     }
   }
@@ -58,7 +58,7 @@ export const ButtonGroup = styled.div`
     }
 
     @media screen and (max-width: 425px) {
-      font-size: 0.8rem;
+      font-size: 1rem;
     }
   }
 `;
