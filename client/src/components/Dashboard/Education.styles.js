@@ -29,6 +29,7 @@ export const EducationTable = styled.table`
 
     th {
       color: white;
+      text-align: center;
     }
   }
 `;

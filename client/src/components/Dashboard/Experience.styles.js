@@ -29,6 +29,7 @@ export const ExperienceTable = styled.table`
 
     th {
       color: white;
+      text-align: center;
     }
   }
 `;
