@@ -40,17 +40,27 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
     </DivItems>
   );
   return (
+    //   <NavbarContainer>
+    //     <NavbarDiv>
+    //       <Link to="/">
+    //         <h2>
+    //           <i className="fas fa-code"></i> DevConnecter
+    //         </h2>
+    //       </Link>
+    //       {!loading && (
+    //         <Fragment>{isAuthenticated ? authLinks : guestLinks}</Fragment>
+    //       )}
+    //     </NavbarDiv>
+    //   </NavbarContainer>
     <NavbarContainer>
-      <NavbarDiv>
+      <Link to="/" className="logo">
         <h2>
-          <Link to="/">
-            <i className="fas fa-code"></i> DevConnecter
-          </Link>
+          <i className="fas fa-code"></i> DevConnect
         </h2>
-        {!loading && (
-          <Fragment>{isAuthenticated ? authLinks : guestLinks}</Fragment>
-        )}
-      </NavbarDiv>
+      </Link>
+      {!loading && (
+        <Fragment>{isAuthenticated ? authLinks : guestLinks}</Fragment>
+      )}
     </NavbarContainer>
   );
 };

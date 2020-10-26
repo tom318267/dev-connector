@@ -1,69 +1,45 @@
 import styled from "styled-components";
 
 export const NavbarContainer = styled.div`
-  width: 100%;
-  background-color: #14a693;
-  height: 50px;
-  line-height: 52px;
-  overflow-x: hidden;
-  box-shadow: 2px 2px 5px 0px rgba(50, 50, 50, 0.35);
-`;
-
-export const NavbarDiv = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 50px;
+  background-color: #14a693;
 
-  a {
+  h2 {
+    padding-left: 15px;
+  }
+
+  .logo {
     text-decoration: none;
     color: white;
 
-    &:hover {
-      color: white;
-    }
-  }
-
-  h2 {
-    margin-left: 15px;
-    font-size: 1.3rem;
-
     @media screen and (max-width: 425px) {
-      display: none;
+      font-size: 0.6rem;
     }
-  }
-
-  @media screen and (max-width: 425px) {
-    justify-content: center;
   }
 `;
 
 export const DivItems = styled.div`
   display: flex;
-  align-items: center;
+  color: white;
 
   a {
     text-decoration: none;
+    margin-right: 20px;
     color: white;
 
-    &:hover {
-      color: white;
-    }
-  }
-
-  h4 {
-    margin-right: 20px;
-    text-decoration: none;
-
     @media screen and (max-width: 425px) {
-      font-size: 0.8rem;
+      font-size: 0.7rem;
     }
   }
 
-  #login {
-    @media screen and (max-width: 425px) {
-      margin-right: unset;
-    }
-  }
+  // #login {
+  //   @media screen and (max-width: 425px) {
+  //     margin-right: unset;
+  //   }
+  // }
 `;
 
 export const LogOut = styled.a`
