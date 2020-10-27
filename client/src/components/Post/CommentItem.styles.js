@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components/macro";
 
 export const CommentItemContainer = styled.div`
   display: grid;
@@ -9,6 +9,11 @@ export const CommentItemContainer = styled.div`
   margin: 20px auto;
 
   border: 1px solid black;
+
+  @media screen and (max-width: 425px) {
+    display: block;
+    word-break: break-word;
+  }
 `;
 
 export const CommentImgContainer = styled.div`

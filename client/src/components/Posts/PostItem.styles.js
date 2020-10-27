@@ -9,6 +9,10 @@ export const PostItemContainer = styled.div`
   margin: 20px auto;
 
   border: 1px solid black;
+
+  @media screen and (max-width: 425px) {
+    display: block;
+  }
 `;
 
 export const PostImgContainer = styled.div`
@@ -27,14 +31,19 @@ export const PostImgContainer = styled.div`
 
 export const PostInfoContainer = styled.div`
   padding: 30px;
+  word-break: break-word;
 
   h3 {
     margin-bottom: 15px !important;
+    word-wrap: break-word;
   }
 `;
 
 export const PostButtonContainer = styled.div`
   margin-top: 10px;
+  @media screen and (max-width: 425px) {
+    display: inline-flex;
+  }
 `;
 
 export const LikeAndUnlikeButton = styled.button`
