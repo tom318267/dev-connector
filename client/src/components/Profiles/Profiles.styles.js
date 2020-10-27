@@ -56,7 +56,6 @@ export const DevImage = styled.img`
   height: 200px;
   border-radius: 100%;
   @media screen and (max-width: 425px) {
-    padding-bottom: 20px;
     width: 150px;
     height: 150px;
   }
